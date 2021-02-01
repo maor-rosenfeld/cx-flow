@@ -3,7 +3,7 @@ buildscript {
         CxSBSDK = "0.4.80"
         ConfigProviderVersion = "1.0.10"
         //cxVersion = "8.90.5"
-        springBootVersion = '2.3.5.RELEASE'
+        springBootVersion = '2.4.2'
         sonarqubeVersion = '2.8'
         atlassianVersion = "5.2.0"
         atlassianFugueVersion = "4.7.2"
@@ -103,12 +103,14 @@ dependencies {
     compile("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
     compile("org.apache.httpcomponents:httpclient:4.5.10")
     compile("org.thymeleaf:thymeleaf:3.0.11.RELEASE")
-    compile("org.codehaus.groovy:groovy-all:3.0.6") {
+    compile("org.codehaus.groovy:groovy-all:3.0.7") {
         exclude group: 'org.apache.ant', module: 'ant'
+        exclude group: 'com.beust', module: 'jcommander'
     }
+    compile('com.beust:jcommander:1.78')
     compile("org.apache.ivy:ivy:2.5.0")
     compile("org.jasypt:jasypt:1.9.3")
-    compile("org.eclipse.jgit:org.eclipse.jgit:5.5.1.201910021850-r")
+    compile("org.eclipse.jgit:org.eclipse.jgit:5.10.0.202012080955-r")
     compile("com.auth0:java-jwt:3.10.3")
     compileOnly('org.springframework.boot:spring-boot-configuration-processor')
     runtime('org.springframework.boot:spring-boot-devtools')
